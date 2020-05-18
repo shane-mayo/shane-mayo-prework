@@ -2,6 +2,32 @@ body {
   margin: 0;
   line-height: 1.5;
   text-transform: uppercase;
-  background-color: lightblue;
+  text-align: center;
+  background-color: #79B9C6;
+  font-family: sans-serif;
 }
 
+.main-content-container {
+  margin: 150px;
+}
+
+.digital-heaven {
+  font-size: 100px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 15px 0 15px 0;
+}
+
+#fdm-text {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: left;
+}
+
+.free-quote {
+  color: #ffffff;
+  font-weight: bold;
+  border: #ffffff solid;
+  padding: 5px;
+  display: inline-block;
+}
