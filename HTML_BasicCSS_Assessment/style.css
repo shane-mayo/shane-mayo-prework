@@ -2,32 +2,31 @@ body {
   margin: 0;
   line-height: 1.5;
   text-transform: uppercase;
-  text-align: center;
   background-color: #79B9C6;
   font-family: sans-serif;
+  font-weight: bold;
+}
+
+#fdm-text {
+  color: #ffffff;
+  text-align: left;
 }
 
 .main-content-container {
-  margin: 150px;
+  margin: 115px;
+  text-align: center;
 }
 
 .digital-heaven {
   font-size: 100px;
   color: #ffffff;
-  font-weight: bold;
-  margin: 15px 0 15px 0;
-}
-
-#fdm-text {
-  color: #ffffff;
-  font-weight: bold;
-  text-align: left;
+  margin: 15px;
 }
 
 .free-quote {
   color: #ffffff;
-  font-weight: bold;
   border: #ffffff solid;
-  padding: 5px;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
   display: inline-block;
 }
