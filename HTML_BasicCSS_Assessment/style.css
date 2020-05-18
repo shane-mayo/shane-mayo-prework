@@ -7,22 +7,32 @@ body {
   font-weight: bold;
 }
 
+/* id used to format and positio the "FDM" text */
 #fdm-text {
   color: #ffffff;
   text-align: left;
 }
 
+/* id format the "Bringing Fancy Ideas to Life" text */
+#fancy-ideas {
+  color: #2F3A59;
+}
+
+/* class used to house the main content. includes "Bringing Fancy Ideas to Life", 
+"Digital Heaven", and "Get a Free Quote" text */
 .main-content-container {
   margin: 115px;
   text-align: center;
 }
 
+/* class used to format the "Digital Heaven" text */
 .digital-heaven {
   font-size: 100px;
   color: #ffffff;
   margin: 15px;
 }
 
+/* class used to format the "Get a Free Quote" text */
 .free-quote {
   color: #ffffff;
   border: #ffffff solid;
