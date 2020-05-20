@@ -5,6 +5,7 @@ body {
   background-color: #79B9C6;
   font-family: sans-serif;
   font-weight: bold;
+  /* text-align: center; */
 }
 
 /* id used to format and positio the "FDM" text */
@@ -19,10 +20,20 @@ body {
 }
 
 /* class used to house the main content. includes "Bringing Fancy Ideas to Life", 
-"Digital Heaven", and "Get a Free Quote" text */
+"Digital Heaven", and "Get a Free Quote" text. */
 .main-content-container {
-  margin: 115px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  position: absolute;
+  flex-wrap: nowrap;
+  /* center the main contents vertically and horizontally */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* class used to format the "Digital Heaven" text */
