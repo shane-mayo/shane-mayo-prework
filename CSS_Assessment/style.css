@@ -1,0 +1,39 @@
+/* CSS Assesment styles */
+
+* {
+    box-sizing: border-box;
+}
+.nav {
+    background-color: gray;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+    top:0px;
+}
+
+.left-box {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: blue;
+    text-align: center;
+    padding: 15% 0;
+}
+
+.right-box {
+    width: 25%;
+    height: 100%;
+    float: right;
+    background-color: red;
+    text-align: center;
+    padding: 15% 0;
+}
+
+.footer {
+    clear: both;
+    position: fixed;
+    width: 100%;
+    background-color: green;
+    bottom: 0px;
+    text-align: center;
+}
