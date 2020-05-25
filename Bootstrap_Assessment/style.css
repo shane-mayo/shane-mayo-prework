@@ -1,0 +1,10 @@
+/* bootstrap_assesment style sheet */
+body {
+  background-color: #79B9C6;
+  font-family: sans-serif;
+}
+
+/* id format the "Bringing Fancy Ideas to Life" text */
+#fancy-ideas {
+  color: #2F3A59;
+}
