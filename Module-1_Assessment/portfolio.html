@@ -9,7 +9,7 @@
     <meta name="author" content="Shane Mayo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shane Mayo Portfolio</title>
+    <title>Shane Mayo About</title>
 
     <!-- links to stylesheets -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -23,42 +23,69 @@
 <body>
 
     <!-- navbar start -->
-    <nav>
-        <h2>Shane Mayo</h2>
-        <a href="index.html">About</a>
-        <a href="#">Portfolio</a>
-        <a href="contact.html">Contact</a>
+    <nav class="navbar py-0 border-bottom main-header navbar-expand d-flex flex-nowrap">
+        <div class="container p-0 my-0">
+            <span class="navbar-brand text-white py-0">
+                <h2>
+                    Shane Mayo
+                </h2>
+            </span>
+
+
+                <!-- navbar links start -->
+                <div name="navbar-links">
+                    <ul class="navbar-nav">
+                        <li name="about" class="nav-link">
+                            <a href="#">About</a>
+                        </li>
+                        <li name="portfolio" class="nav-link">
+                            <a href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li name="contact" class="nav-link">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- navbar links end -->
+        </div>
     </nav>
     <!-- navbar end -->
 
-    <!-- wrapper start -->
-    <div name="wrapper">
-        <!-- greeting start -->
-        <header>
-            <h2>Portfolio</h2>
-        </header>
+    <!-- content start -->
+    <main name="main-content" class="container main-content mt-5 p-4">
 
-        <section>
-            <div class="">
-                <div class="">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                </div>
-                <div class="">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                </div>
-                <div class="">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                    <img src="assets/images/profile-picture.png" alt="image1">
-                    <img src="assets/images/profile-picture.png" alt="image1">
+        <!-- greeting start -->
+        <div name="greeting" class="jumbotron-fluid">
+            <div class="row">
+                <div class="col-12 mx-auto">
+                    <header>
+                        <h2>About Me</h2>
+                        <hr id="horizontal-line" class="pb-2">
+                    </header>
                 </div>
             </div>
-        </section>
-    </div>
+            <div name="" class="row d-flex">
+
+                <!-- image starts here -->
+                <div name="image-container" class="col">
+                    <div name="profile-picture">
+                        <img src="assets/images/profile-picture.png" alt="Profile Picture of Shane Mayo"
+                            class="img-fluid pb-3 pr-3 float-lg-left float-md-left">
+                    </div>
+                    <!-- greeting end -->
+                </div>
+                <!-- image ends -->
+            </div>
+        </div>
+    </main>
     <!-- wrapper end -->
+    <footer name="footer" class="footer fixed-bottom text-center">
+        <div class="container">
+            <span class="small">
+                <p>Copyright&copy</p>
+            </span>
+        </div>
+    </footer>
 
 </body>
 
