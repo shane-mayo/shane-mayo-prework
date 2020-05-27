@@ -23,12 +23,9 @@
 <body>
 
     <!-- navbar start -->
-    <nav class="navbar py-0 border-bottom navbar-light bg-light navbar-expand-sm">
-
-        
-        <div class="container">
-            
-            <span class="navbar-brand text-white bg-info font-weight-bold p-3">
+    <nav class="navbar py-0 border-bottom navbar-expand-sm main-header">
+        <div class="container p-0 my-0">
+            <span class="navbar-brand text-white py-0">
                 <h2>
                     Shane Mayo
                 </h2>
@@ -37,7 +34,7 @@
 
                 <!-- navbar links start -->
                 <div name="navbar-links">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav">
                         <li name="about" class="nav-link">
                             <a href="#">About</a>
                         </li>
@@ -54,16 +51,16 @@
     </nav>
     <!-- navbar end -->
 
-    <!-- wrapper start -->
-    <main name="wrapper" class="container">
+    <!-- content start -->
+    <main name="main-content" class="container main-content mt-5 p-4">
 
         <!-- greeting start -->
-        <div name="greeting" class="jumbotron-fluid border p-4 my-5">
+        <div name="greeting" class="jumbotron-fluid">
             <div class="row">
-                <div class="col-12 text-info mx-auto">
+                <div class="col-12 mx-auto">
                     <header>
                         <h2>About Me</h2>
-                        <hr>
+                        <hr id="horizontal-line" class="pb-2">
                     </header>
                 </div>
             </div>
@@ -106,10 +103,10 @@
         </div>
     </main>
     <!-- wrapper end -->
-    <footer name="footer" class="page-footer bg-warning text-center mt-auto py-3">
+    <footer name="footer" class="footer fixed-bottom text-center">
         <div class="container">
             <span class="small">
-                <p>Copyright &</p>
+                <p>Copyright&copy</p>
             </span>
         </div>
     </footer>
