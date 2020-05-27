@@ -23,39 +23,96 @@
 <body>
 
     <!-- navbar start -->
-    <nav>
-        <h2>Shane Mayo</h2>
-        <a href="#">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
+    <nav class="navbar py-0 border-bottom navbar-light bg-light navbar-expand-sm">
+
+        
+        <div class="container">
+            
+            <span class="navbar-brand text-white bg-info font-weight-bold p-3">
+                <h2>
+                    Shane Mayo
+                </h2>
+            </span>
+
+
+                <!-- navbar links start -->
+                <div name="navbar-links">
+                    <ul class="navbar-nav mr-auto">
+                        <li name="about" class="nav-link">
+                            <a href="#">About</a>
+                        </li>
+                        <li name="portfolio" class="nav-link">
+                            <a href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li name="contact" class="nav-link">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- navbar links end -->
+        </div>
     </nav>
     <!-- navbar end -->
-    
+
     <!-- wrapper start -->
-    <div name="wrapper">
+    <main name="wrapper" class="container">
+
         <!-- greeting start -->
-        <h2>About Me</h2>
-        <section name="greeting">
-            <div>
-                <img src="assets/images/profile-picture.png" alt="Profile Picture of Shane Mayo">
+        <div name="greeting" class="jumbotron-fluid border p-4 my-5">
+            <div class="row">
+                <div class="col-12 text-info mx-auto">
+                    <header>
+                        <h2>About Me</h2>
+                        <hr>
+                    </header>
+                </div>
             </div>
-            <p>
-                Hello there! Thank you for visiting.
-            </p>
-            <p>
-                My name is Shane. I'm an aspiring software developer with a Bachelor of Science in computer science. I enjoy
-                problem solving, researching unfamiliar technologies, and applying new techniques using technologies that
-                I'm already working with.
-            </p>
-            <p>
-                I also enjoy myriad other activities - far too many to list them all. Drawing, reading, going for long walks
-                on the...<i>oops!</i> Just kidding. All joking aside though, I really do enjoy drawing and reading. I'm also
-                an avid player of video games. I tend to play mobile games the most, but enjoy a good console game on
-                occasion as well.
-            </p>
-        </section>
-    </div>
+            <div name="" class="row d-flex">
+
+                <!-- image starts here -->
+                <div name="image-container" class="col">
+                    <div name="profile-picture">
+                        <img src="assets/images/profile-picture.png" alt="Profile Picture of Shane Mayo"
+                            class="img-fluid pb-3 pr-3 float-lg-left float-md-left">
+                    </div>
+                    <!-- greeting starts -->
+                    <div name="greeting" class="">
+                        <p>
+                            Hello there! Thank you for visiting.
+                        </p>
+                        <p>
+                            My name is Shane. I'm an aspiring software developer with a Bachelor of Science in computer
+                            science. I enjoy
+                            problem solving, researching unfamiliar technologies, and applying new techniques using
+                            technologies that
+                            I'm already working with.
+                        </p>
+                        <p>
+                            I also enjoy myriad other activities - far too many to list them all. Drawing, reading,
+                            going
+                            for long walks
+                            on the...<i>oops!</i> Just kidding. All joking aside though, I really do enjoy drawing and
+                            reading. I'm also
+                            an avid player of video games. I tend to play mobile games the most, but enjoy a good
+                            console
+                            game on
+                            occasion as well.
+                        </p>
+                    </div>
+                    <!-- greeting end -->
+                </div>
+                <!-- image ends -->
+            </div>
+        </div>
+    </main>
     <!-- wrapper end -->
+    <footer name="footer" class="page-footer bg-warning text-center mt-auto py-3">
+        <div class="container">
+            <span class="small">
+                <p>Copyright &</p>
+            </span>
+        </div>
+    </footer>
 
 </body>
 
