@@ -40,8 +40,11 @@ a:link, a:hover, a:active, a:visited {
 
 .footer {
     background: #666666;
-    color: #ffffff;
     padding-top: 2em;
+}
+
+.footer p {
+    color: #ffffff;
 }
 
 .main-content {
