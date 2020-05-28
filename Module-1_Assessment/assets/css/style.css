@@ -10,7 +10,7 @@ html {
 body {
     background-image: url('../images/concrete-texture_bg.png');
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-    height: 92%;
+    min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
