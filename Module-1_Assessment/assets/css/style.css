@@ -22,6 +22,10 @@ p {
     color: #777777;
 }
 
+.teal-background-color {
+    background: #4aaaa5;
+}
+
 a:link, a:hover, a:active, a:visited {
     color: #777777;
 }
@@ -49,8 +53,8 @@ a:link, a:hover, a:active, a:visited {
 
 .main-content {
     background: #ffffff;
-    border: #dddddd solid 2px;
-    width: 960px;
+    border: #dddddd solid;
+    max-width: 960px;
 }
 
 .main-content h2 {
