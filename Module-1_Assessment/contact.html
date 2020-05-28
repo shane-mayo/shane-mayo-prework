@@ -23,40 +23,77 @@
 <body>
 
     <!-- navbar start -->
-    <nav>
-        <h2>Shane Mayo</h2>
-        <a href="index.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="#">Contact</a>
+    <nav class="navbar py-0 border-bottom main-header navbar-expand d-flex flex-nowrap mx-auto">
+        <div class="container p-0 my-0">
+            <span class="navbar-brand text-white py-0">
+                <h2>
+                    Shane Mayo
+                </h2>
+            </span>
+
+
+            <!-- navbar links start -->
+            <div name="navbar-links">
+                <ul class="navbar-nav">
+                    <li name="about" class="nav-link">
+                        <a href="index.html">About</a>
+                    </li>
+                    <li name="portfolio" class="nav-link">
+                        <a href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li name="contact" class="nav-link">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- navbar links end -->
+        </div>
     </nav>
     <!-- navbar end -->
-    
-    <!-- wrapper start -->
-    <div name="wrapper">
-        <!-- greeting start -->
-        <header>
-            <h2>Contact</h2>
-        </header>
-        <section name="contact-form">
-            <span>Name</span>
-            <form action="#" method="get">
-                <label for="name"></label>
-                <input type="text" id="name" name="name"><br><br>
-            </form>
-            <span>Email</span>
-            <form action="#">
-                <label for="email"></label>
-                <input type="text" id="email" name="email"><br><br>
-            </form>
-            <span>Message</span>
+
+    <!-- content start -->
+    <main name="main-content" class="container main-content my-5 p-4 mx-auto">
+
+        <div name="page-title" class="jumbotron-fluid">
+            <div class="row">
+                <div class="col-12 mx-auto">
+                    <header>
+                        <h2>Contact</h2>
+                        <hr id="horizontal-line" class="pb-2">
+                    </header>
+                </div>
+            </div>
+
+
             <form>
-                <label for="message"></label>
-                <textarea id="message" name="message" rows="10" cols="30"></textarea><br><br>
-                <input type="submit" value="Submit">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name-id" placeholder="John Smith"></input>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="email-id" placeholder="example@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="textarea">Message</label>
+                  <textarea id="textarea" class="form-control" rows="10"></textarea>
+                </div>
+                <button type="submit" class="btn ">
+                    Submit
+                </button>
               </form>
-        </section>
-    </div>
+    </main>
     <!-- wrapper end -->
+    
+    <footer name="footer" class="row">
+        <div class="col footer text-center fixed-bottom mt-5">
+            <div class="container">
+                <span class="small">
+                    <p>Copyright&copy</p>
+                </span>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
