@@ -8,9 +8,9 @@ html {
 }
 
 body {
-    background-image: url('../images/concrete-texture_bg.png');
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-    min-height: 92%;
+    min-height: 100%;
+    background-image: url('../images/concrete-texture_bg.png');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,7 +26,7 @@ p {
     background-color: #4aaaa5;
 }
 
-a :link, a :hover, a :active, a :visited {
+a:link, a:active, a:visited {
     color: #777777;
 }
 
@@ -45,11 +45,11 @@ a :link, a :hover, a :active, a :visited {
 
 .footer {
     background: #666666;
-    padding-top: 2em;
 }
 
 .footer p {
     color: #ffffff;
+    margin-bottom: 0;
 }
 
 .main-content {
@@ -77,3 +77,4 @@ button[type=submit] {
 input[type=text], input[type=email], #textarea {
     border-radius: 0;
 }
+
