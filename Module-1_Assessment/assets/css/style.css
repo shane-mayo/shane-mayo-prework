@@ -18,6 +18,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Georgia', Georgia, 'Times New Roman', Times, serif;
 }
 
+#size-proper {
+    width: 960px;
+}
+
 p {
     color: #777777;
 }
@@ -52,18 +56,19 @@ a:link, a:active, a:visited {
     margin-bottom: 0;
 }
 
-.main-content {
+#main-content {
     background: #ffffff;
     border: #dddddd solid;
-    max-width: 960px;
+    width: 960px;
 }
 
-.main-content h2 {
+#main-content h2 {
     font-weight: bold;
 }
 
 #horizontal-line {
     border-width: 3px;
+    margin-top: 30px;
 }
 
 button[type=submit] {
@@ -78,3 +83,12 @@ input[type=text], input[type=email], #textarea {
     border-radius: 0;
 }
 
+@media screen and (max-width: 575px) {
+    #main-content {
+        width: auto;
+    }
+
+    #size-proper {
+        width: 100%;
+    }
+  }
