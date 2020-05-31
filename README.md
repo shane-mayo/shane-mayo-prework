@@ -10,11 +10,11 @@ The repo contains projects working with HTML, CSS, Bootstrap, and Javascript to 
 
 Each project has its own directory. The file structure is as follows:
     
-**Project_Folder**
-        |------ *.html assets
-                          |--- css javascript images
-                                  |       |       |
-                              *.css   *.js  *.png *.jpg
+<pre>Parent Directory
+        |------.html--assets
+                         |---css--javascript--images
+                              |       |         |
+                            .css     .js    .png .jpg</pre>
 
 Projects can be interacted with through launching the **'index.html'** file. The file structure is relative and no special tasks should be necessary to access the content in its completed form.
 
