@@ -1,58 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
     resize: none;
 }
 
 body {
-    background-image: url("../images/sewer-lair.jpg");
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    background-position: center;
+    background-color: #000;
     padding-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: #000;
-    /* text-shadow: 0 0 2px black, -1px -1px 2px black, 1px 0 2px black, 1px 1px 2px black; */
-    
+    color: #fff;
 }
-.container { 
+
+.container {
     text-align: center;
-    /* background-color: #eee; */
-    
 }
-h1,h2,h3,
-h4,h5,h6 {
-    padding: 5px;
-    background-color: rgba(101,155,242,.2);
+
+h1, h2, h3, h4, h5, h6 {
+    padding: .3em;
+    background-color: rgba(101, 155, 242, .2);
+    overflow: visible;
 }
 
 #title-image {
     display: block;
     margin: 3em auto 0em auto;
 }
-#gameover-image, #youwin-image{ 
+
+#gameover-image, #youwin-image {
     display: block;
-    margin: 25px auto;
+    margin: 1em auto;
+}
+
+#characterImage {
+    padding: 2em;
+    margin: 0em auto;
 }
 
 #currentWord {
-    letter-spacing: 10px;
+    letter-spacing: .35em;
 }
 
-#pressKeyTryAgain, 
-#gameover-image, 
-#youwin-image { display: none;}
+#pressKeyTryAgain, #gameover-image, #youwin-image {
+    display: none;
+}
+
 .gameplay-column {
-    padding-top: 20px;
-    border: 3px solid #fff;
+    padding-top: 1.25em;
+    border: .2em solid #fff;
     text-align: center;
-    margin-top: 50px;
-    min-height: 500px;
+    margin-top: 3em;
+    min-height: 42em;
     background-color: rgba(56, 52, 52, 0.8);
-}
-
-@media screen and (max-width: 768px) {
-    body {
-        background-position: center;
-    }
 }

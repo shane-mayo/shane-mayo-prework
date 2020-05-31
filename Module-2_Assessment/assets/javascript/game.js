@@ -1,22 +1,4 @@
-/**
- * Word Guess Game Requirements
- * 
- * Theme: Teenage Mutant Ninja Turtles
- * 
- * key events to listent for key presses
- * 
- * 
- * Elements on the page:
- *  Press any key to get started
- *  Wins - number of times a word has been guessed correctly
- *  Reveal correctly guessed letters
- *  Number of guesses remaining for the user
- *  Already guessed letters displayed
- *  After user wins or loses, automatically choose another word and make the user play it
- *  
- */
-
-var selectableWords =           // Word list
+var selectableWords =
     [
         "leonardo",
         "donatello",
@@ -29,68 +11,79 @@ var selectableWords =           // Word list
         "rocksteady",
         "bebop",
         "foot soldier",
-        "sewer",
+        "sewer lair",
         "krang",
     ];
 
 const maxTries = 10;
 
-var guessedLetters = [];
-var currentWordIndex;
-var guessingWord = [];
-var remainingGuesses = 0;
-var gameStarted = false;
-var hasFinished = false;
-var wins = 0;
+let guessedLetters = [];
+let currentWordIndex;
+let currentWord = [];
+let remainingGuesses = 0;
+let gameStarted = false;
+let hasFinished = false;
+let wins = 0;
 
-
+/**
+ * function to reset the game to its initial state
+ */
 function resetGame() {
     remainingGuesses = maxTries;
     gameStarted = false;
 
-    // Use Math.floor to round the random number down to the nearest whole.
+    // get random number to determine which word will be used
     currentWordIndex = Math.floor(Math.random() * (selectableWords.length));
 
-    // Clear out arrays
-    guessedLetters = [];
-    guessingWord = [];
 
-    // Make sure the hangman image is cleared
-    document.getElementById("hangmanImage").src = "";
+    guessedLetters = [];    // array to store letters guessed by user
+    currentWord = [];       // array to store the current word
 
-    /**
-     * iterate over the chars of the chosen word
-     * if the char at index i is a space, then push a no-break space onto the array
-     * else push an underscore onto the array
-     * 
-     */
+    // reset the character image text
+    document.getElementById("characterImage").src = "";
+
+    
+    //  iterate over the chars of the chosen word
+    //  if the char at index i is a space, then push a no-break 
+    //  space onto the array else push an underscore onto the array
     for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
         if (selectableWords[currentWordIndex].charAt(i) === " ") {
-            guessingWord.push("\xA0");
+            currentWord.push("\xA0");
         } else {
-            guessingWord.push("_");
+            currentWord.push("_");
         }
     }
 
-    // Hide game over and win images/text
+    // hide elements corresponding to the game being won/lost from viewport
     document.getElementById("pressKeyTryAgain").style.cssText = "display: none";
     document.getElementById("gameover-image").style.cssText = "display: none";
     document.getElementById("youwin-image").style.cssText = "display: none";
 
-    // Show display
+    // update the display to show information changes, i.e. wins, guesses remaining
     updateDisplay();
 };
 
-//  Updates the display on the HTML Page
+/**
+ * function to update the display's contents
+ */
 function updateDisplay() {
 
+    // change the number of wins is necessary
     document.getElementById("totalWins").innerText = wins;
+
+    // set the current word being used
     document.getElementById("currentWord").innerText = "";
-    for (var i = 0; i < guessingWord.length; i++) {
-        document.getElementById("currentWord").innerText += guessingWord[i];
+    for (let i = 0; i < currentWord.length; i++) {
+        document.getElementById("currentWord").innerText += currentWord[i];
     }
+
+    // update the number of guesses the player has left
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
+
+    // update the letters already used by the player
     document.getElementById("guessedLetters").innerText = guessedLetters;
+
+    // if the player loses display the appropriate images
     if (remainingGuesses <= 0) {
         document.getElementById("gameover-image").style.cssText = "display: block";
         document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
@@ -98,71 +91,115 @@ function updateDisplay() {
     }
 };
 
-// Updates the image depending on how many guesses
-function updateHangmanImage() {
-    document.getElementById("hangmanImage").src = "assets/images/" + (maxTries - remainingGuesses) + ".png";
-};
-
+/**
+ * function to determine if the letter has been used or not
+ * if not, determine if the letter is in the word
+ * @param {*} letter element that may or may not be contained in the current word
+ */
 function makeGuess(letter) {
     if (remainingGuesses > 0) {
         if (!gameStarted) {
             gameStarted = true;
         }
 
-        // Make sure we didn't use this letter yet
+        // if the letter hasn't been used, check to see if it's part of the word or not
         if (guessedLetters.indexOf(letter) === -1) {
             guessedLetters.push(letter);
             evaluateGuess(letter);
         }
     }
 
+    // update the display to include the guessed letter
     updateDisplay();
+
+    // check to see if the player has won the game
     checkWin();
 };
 
-// This function takes a letter and finds all instances of 
-// appearance in the string and replaces them in the guess word.
+/**
+ * a function to determine if the letter is contained in the current word
+ * @param {*} letter element to be checked against the current word
+ */
 function evaluateGuess(letter) {
     // Array to store positions of letters in string
-    var positions = [];
+    let positions = [];
 
-    // Loop through word finding all instances of guessed letter, store the indicies in an array.
-    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+    // loop over the current word to see if there are any occurences of the
+    // the letter in the word
+    for (let i = 0; i < selectableWords[currentWordIndex].length; i++) {
         if (selectableWords[currentWordIndex][i] === letter) {
             positions.push(i);
         }
     }
 
-    // if there are no indicies, remove a guess and update the hangman image
+    // decrement the number of guesses left
     if (positions.length <= 0) {
         remainingGuesses--;
-        updateHangmanImage();
     } else {
-        // Loop through all the indicies and replace the '_' with a letter.
+        // if word contains letter change corresponding '_' with a letter.
         for (var i = 0; i < positions.length; i++) {
-            guessingWord[positions[i]] = letter;
+            currentWord[positions[i]] = letter;
         }
     }
 };
 
+/**
+ * function to determine if the game has been won
+ */
 function checkWin() {
-    if (guessingWord.indexOf("_") === -1) {
+    // if no more occurences of "_" exist, the game has been won
+    if (currentWord.indexOf("_") === -1) {
         document.getElementById("youwin-image").style.cssText = "display: block";
         document.getElementById("pressKeyTryAgain").style.cssText = "display: block";
         wins++;
         hasFinished = true;
+        displayCharacterImage();
     }
 };
 
+/**
+ * function to display an image that corresponds with the
+ * current word if the player wins the game
+ */
+function displayCharacterImage() {
+
+    // images corresponding to possible words
+    const characterImages = [
+        {src: "assets/images/leonardo.jpg"},
+        {src: "assets/images/donatello.jpg"},
+        {src: "assets/images/raphael.jpg"},
+        {src: "assets/images/michelangelo.jpg"},
+        {src: "assets/images/shredder.jpg"},
+        {src: "assets/images/splinter.png"},
+        {src: "assets/images/april.jpg"},
+        {src: "assets/images/casey-jones.jpg"},
+        {src: "assets/images/rocksteady.png"},
+        {src: "assets/images/bebop.png"},
+        {src: "assets/images/foot-soldier.png"},
+        {src: "assets/images/sewer-lair.jpg"},
+        {src: "assets/images/krang.png"},
+    ]
+
+    // load the image
+    let characterImage = new Image();
+    characterImage = characterImages[currentWordIndex].src;
+    document.getElementById("characterImage").src = characterImage;
+};
+
+
+/**
+ * function to control keypress functionality
+ * includes checking to see if the game has been won/lost
+ * limits user interaction to a-z on the keyboard while playing
+ */
 document.onkeydown = function (event) {
-    // If we finished a game, dump one keystroke and reset.
     if (hasFinished) {
         resetGame();
         hasFinished = false;
     } else {
-        // Check to make sure a-z was pressed.
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key.toLowerCase());
         }
     }
 };
+
